@@ -4,7 +4,7 @@
 
 ---
 
-### Description
+## Description
 
 #### Travel Planner, a comprehensive web application that simplifies travel planning and organization. Going on a journey? Take a mate with ya. JourneyMate
 
@@ -26,7 +26,7 @@
 
 ---
 
-### Future Updates
+## Future Updates
 
 #### Integration with real-time weather updates
 
@@ -36,13 +36,13 @@
 
 #### Enhanced mobile experience with a dedicated app
 
-### **_Technologies Used_**
+## **_Technologies Used_**
 
 - Python
 - Django
 - postgreSQL
 
-### **_Getting Started_**
+## **_Getting Started_**
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/aZLhCVjV/journeymate-project-3-sam-taaj-pat).
 
