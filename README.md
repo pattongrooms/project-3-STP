@@ -4,13 +4,13 @@
 
 ---
 
-## Description
+## **_Description_**
 
 #### Travel Planner, a comprehensive web application that simplifies travel planning and organization. Going on a journey? Take a mate with ya. JourneyMate
 
 ---
 
-## Collaborators:
+## **_Collaborators:_**
 
 ### Patton Grooms
 
@@ -26,7 +26,7 @@
 
 ---
 
-## Future Updates
+## **_Future Updates_**
 
 #### Integration with real-time weather updates
 
@@ -52,9 +52,15 @@
 
 ### **_Screenshots_**
 
-##### JourneyMate Wireframe
+#### JourneyMate Wireframe
 
-![WireFrame]()
+![WireFrame](images/wireframe_1.png)
+![](images/wireframe_2.png)
+![](images/wireframe_3.png)
+
+#### JourneyMate ERD
+
+![](images/erd_journeymate.png)
 
 ---
 
