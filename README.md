@@ -44,9 +44,9 @@
 
 ## **_Getting Started_**
 
-##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/aZLhCVjV/journeymate-project-3-sam-taaj-pat).
+##### Trello board [here](https://trello.com/b/aZLhCVjV/journeymate-project-3-sam-taaj-pat).
 
-##### The project itself was deployed and can be viewed [here]().
+##### Pitch Deck [here](https://docs.google.com/presentation/d/1ZXlzEQVcTHV-_frMQG-jF8x84sw2_-p-jqBuw2iQ-oc/edit#slide=id.gcb9a0b074_1_0).
 
 ---
 
