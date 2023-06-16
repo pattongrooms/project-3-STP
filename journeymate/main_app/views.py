@@ -10,7 +10,7 @@ def about(request):
 
 def destinations_index(request):
   return render(request, 'destinations/index.html', {
-    'detsinations': destinations
+    'destinations': destinations
   })
 
 
