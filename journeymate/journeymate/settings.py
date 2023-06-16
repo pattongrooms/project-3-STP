@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'journeymate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'journeymate/',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'journeymate',
         # 'HOST': 'localhost',  <-- (optional) some computers might need this line
         # 'USER': 'admin', <-- (optional) postgres user name, if you have to sign into an account to open psql, you will want to add that user name here.
         # 'PASSWORD': 'password123', <-- (optional) postgres user password, if you have to sign into an account to open psql, you will want to add that user password here.
