@@ -1,32 +1,42 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Destination
 
 # Create your views here.
 
+
 def home(request):
-  return render(request, 'home.html')
+    return render(request, "home.html")
+
 
 def about(request):
-  return render(request, 'about.html')
+    return render(request, "about.html")
+
 
 def destinations_index(request):
-  destinations = Destination.objects.all()
-  return render(request, 'destinations/index.html', {
-    'destinations': destinations
-  })
+    destinations = Destination.objects.all()
+    return render(request, "destinations/index.html", {"destinations": destinations})
+
 
 def destinations_detail(request, destination_id):
-  destination = Destination.objects.get(id=destination_id)
-  return render(request, 'destinations/detail.html', { 'destination': destination })
+    destination = Destination.objects.get(id=destination_id)
+    return render(request, "destinations/detail.html", {"destination": destination})
 
 
 class DestinationCreate(CreateView):
-  model = Destination
-  fields = '__all__'
+    model = Destination
+    fields = "__all__"
 
-  def form_valid(self, form):
-    form.instance.user = self.request.user
-    return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
+class DestinationUpdate(UpdateView):
+    model = Destination
+    fields = "__all__"
+
+
+class DestinationDelete(DeleteView):
+    model = Destination
+    success_url = "/destinations"
