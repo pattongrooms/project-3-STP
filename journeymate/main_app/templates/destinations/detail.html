@@ -14,6 +14,9 @@
     <p>End Date: {{ destination.end_date|linebreaks }}</p>
     <p>Accomodations: {{ destination.accomodation|linebreaks }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'destinations_update' destination.id %}">Edit</a>
+    <a href="{% url 'destinations_delete' destination.id %}">Delete</a>
 </div>
 
 {% endblock %}
