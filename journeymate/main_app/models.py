@@ -39,4 +39,4 @@ class Destination(models.Model):
     return f'{self.country} ({self.id})'
 
   def get_absolute_url(self):
-    return reversed('detail', kwargs={'destination_id': self.id})
+    return reverse('detail', kwargs={'destination_id': self.id})

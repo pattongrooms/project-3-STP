@@ -6,6 +6,6 @@ urlpatterns = [
   path('about/', views.about, name='about'),
   path('destinations/', views.destinations_index, name='index'),
   path('destinations/<int:destination_id>/', views.destinations_detail, name='detail'),
-  # path('destinations/create/', views.DestinationCreate.as_view(), name='destinations_create'),
+  path('destinations/create/', views.DestinationCreate.as_view(), name='destinations_create'),
   
 ]
