@@ -7,3 +7,10 @@ def home(request):
 
 def about(request):
   return render(request, 'about.html')
+
+def destinations_index(request):
+  return render(request, 'destinations/index.html', {
+    'destinations': destinations
+  })
+
+
