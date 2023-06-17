@@ -36,4 +36,5 @@ urlpatterns = [
         views.add_media,
         name='add_media'
     ),
+    path('accounts/signup/', views.signup, name='signup'),
 ]

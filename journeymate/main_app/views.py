@@ -3,6 +3,9 @@ import boto3
 import os
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from .models import Destination, Media
 from .forms import ItineraryForm
 
@@ -45,7 +48,8 @@ def add_media(request, destination_id):
     media_file = request.FILES.get('media-file', None)
     if media_file:
         s3 = boto3.client('s3')
-        key = uuid.uuid4().hex[:6] + media_file.name[media_file.name.rfind('.'):]
+        key = uuid.uuid4().hex[:6] + \
+            media_file.name[media_file.name.rfind('.'):]
         try:
             bucket = os.environ['S3_BUCKET']
             s3.upload_fileobj(media_file, bucket, key)
@@ -55,6 +59,21 @@ def add_media(request, destination_id):
             print('An error occurred uploading file to S3')
             print(e)
     return redirect('detail', destination_id=destination_id)
+
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index')
+        else:
+            error_message = 'Invalid sign up - try again'
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
 
 
 class DestinationCreate(CreateView):
