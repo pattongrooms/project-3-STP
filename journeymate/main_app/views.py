@@ -6,6 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Destination, Media
 from .forms import ItineraryForm
 
@@ -20,11 +22,13 @@ def about(request):
     return render(request, "about.html")
 
 
+@login_required
 def destinations_index(request):
-    destinations = Destination.objects.all()
+    destinations = Destination.objects.filter(user=request.user)
     return render(request, "destinations/index.html", {"destinations": destinations})
 
 
+@login_required
 def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
     itinerary_form = ItineraryForm()
@@ -35,6 +39,7 @@ def destinations_detail(request, destination_id):
     )
 
 
+@login_required
 def add_itinerary(request, destination_id):
     form = ItineraryForm(request.POST)
     if form.is_valid():
@@ -44,6 +49,7 @@ def add_itinerary(request, destination_id):
     return redirect("detail", destination_id=destination_id)
 
 
+@login_required
 def add_media(request, destination_id):
     media_file = request.FILES.get('media-file', None)
     if media_file:
@@ -76,7 +82,7 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-class DestinationCreate(CreateView):
+class DestinationCreate(LoginRequiredMixin, CreateView):
     model = Destination
     fields = "__all__"
 
@@ -85,11 +91,11 @@ class DestinationCreate(CreateView):
         return super().form_valid(form)
 
 
-class DestinationUpdate(UpdateView):
+class DestinationUpdate(LoginRequiredMixin, UpdateView):
     model = Destination
     fields = "__all__"
 
 
-class DestinationDelete(DeleteView):
+class DestinationDelete(LoginRequiredMixin, DeleteView):
     model = Destination
     success_url = "/destinations"

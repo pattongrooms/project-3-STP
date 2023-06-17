@@ -40,6 +40,7 @@
               <li><a href="{% url 'index' %}">VIEW MY DESTINATIONS</a></li>
               <li><a href="{% url 'logout' %}">LOG OUT</a></li>
             {% else %}
+              <li><a href="{% url 'signup' %}">SIGN UP</a></li>
               <li><a href="{% url 'login' %}">LOG IN</a></li>
             {% endif %}
           </ul>
