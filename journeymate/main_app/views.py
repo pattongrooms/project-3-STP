@@ -84,7 +84,7 @@ def signup(request):
 
 class DestinationCreate(LoginRequiredMixin, CreateView):
     model = Destination
-    fields = "__all__"
+    fields = ['start_date', 'end_date', 'country', 'state', 'city', 'transportation', 'accomodations']
 
     def form_valid(self, form):
         form.instance.user = self.request.user

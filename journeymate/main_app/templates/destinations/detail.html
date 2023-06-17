@@ -9,10 +9,10 @@
     <p>Country: {{ destination.country }}</p>
     <p>State: {{ destination.state|linebreaks }}</p>
     <p>City: {{ destination.city|linebreaks }}</p>
-    <p>Transport: {{ destination.transport|linebreaks }}</p>
+    <p>Transport: {{ destination.transportation|linebreaks }}</p>
     <p>Start Date: {{ destination.start_date|linebreaks }}</p>
     <p>End Date: {{ destination.end_date|linebreaks }}</p>
-    <p>Accomodations: {{ destination.accomodation|linebreaks }}</p>
+    <p>Accomodations: {{ destination.accomodations|linebreaks }}</p>
   </div>
     <div class="card-action">
       <a href="{% url 'destinations_update' destination.id %}">Edit</a>
