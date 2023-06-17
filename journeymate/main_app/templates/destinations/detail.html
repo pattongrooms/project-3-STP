@@ -19,6 +19,19 @@
       <a href="{% url 'destinations_delete' destination.id %}">Delete</a>
     </div>
 </div>
+
+  {% for media in destination.media_set.all %}
+      <img class="responsive-img card-panel" src="{{media.url}}">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Media Uploaded</div>
+    {% endfor %}
+    <form action="{% url 'add_media' destination.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+      {% csrf_token %}
+      <input type="file" name="media-file">
+      <br><br>
+      <button type="submit" class="btn">Upload Media</button>
+  </form>
+
   <br>
 
   {% if destination.activity_for_today %}
