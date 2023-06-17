@@ -3,8 +3,8 @@ import boto3
 import os
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Destination
-from .forms import ItineraryForm, Media
+from .models import Destination, Media
+from .forms import ItineraryForm
 
 # Create your views here.
 

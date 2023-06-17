@@ -33,6 +33,7 @@ urlpatterns = [
     ),
     path(
       'destinations/<int:destination_id>/add_media/',
-        views.add_media, name='add_media'
+        views.add_media, 
+        name='add_media'
     ),
 ]
