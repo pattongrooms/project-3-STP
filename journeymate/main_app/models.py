@@ -26,14 +26,10 @@ class Destination(models.Model):
     state = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     transportation = models.CharField(
-        max_length=1,
-        choices=TRANSPORTS,
-        default=TRANSPORTS[0][0],
+        max_length=100
     )
     accomodations = models.CharField(
-        max_length=1,
-        choices=ACCOMODATIONS,
-        default=ACCOMODATIONS[0][0],
+        max_length=100
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
