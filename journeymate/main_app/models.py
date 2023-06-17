@@ -49,7 +49,7 @@ class Itinerary(models.Model):
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_activities_display()} on {self.date}"
+        return f"{self.get_activities_display()} on {self.date} and {self.time}"
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["-date", "time"]

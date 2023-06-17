@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Destination
 from .forms import ItineraryForm
@@ -27,6 +27,15 @@ def destinations_detail(request, destination_id):
         "destinations/detail.html",
         {"destination": destination, "itinerary_form": itinerary_form},
     )
+
+
+def add_itinerary(request, destination_id):
+    form = ItineraryForm(request.POST)
+    if form.is_valid():
+        new_itinerary = form.save(commit=False)
+        new_itinerary.destination_id = destination_id
+        new_itinerary.save()
+    return redirect("detail", destination_id=destination_id)
 
 
 class DestinationCreate(CreateView):

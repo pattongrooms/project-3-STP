@@ -23,4 +23,9 @@ urlpatterns = [
         views.DestinationDelete.as_view(),
         name="destinations_delete",
     ),
+    path(
+        "destinations/<int:destination_id>/add_itinerary/",
+        views.add_itinerary,
+        name="add_itinerary",
+    ),
 ]

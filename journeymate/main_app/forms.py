@@ -5,4 +5,4 @@ from .models import Itinerary
 class ItineraryForm(ModelForm):
     class Meta:
         model = Itinerary
-        fields = "__all__"
+        fields = ["date", "time", "activities"]
