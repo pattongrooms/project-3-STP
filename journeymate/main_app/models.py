@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import date
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 TRANSPORTS = (
@@ -35,6 +35,7 @@ class Destination(models.Model):
         choices=ACCOMODATIONS,
         default=ACCOMODATIONS[0][0],
     )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.country} ({self.id})"
@@ -60,8 +61,8 @@ class Itinerary(models.Model):
 
 
 class Media(models.Model):
-  url = models.CharField(max_length=200)
-  destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+    url = models.CharField(max_length=200)
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
 
-  def __str__(self):
-    return f"Media for destination_id: {self.destination_id} @{self.url}"
+    def __str__(self):
+        return f"Media for destination_id: {self.destination_id} @{self.url}"
