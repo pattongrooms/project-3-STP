@@ -57,3 +57,11 @@ class Itinerary(models.Model):
 
     class Meta:
         ordering = ["-date", "time"]
+
+
+class Media(models.Model):
+  url = models.CharField(max_length=200)
+  destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Media for destination_id: {self.destination_id} @{self.url}"

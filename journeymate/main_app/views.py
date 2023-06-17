@@ -1,6 +1,9 @@
+import uuid
+import boto3
+import os
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Destination
+from .models import Destination, Media
 from .forms import ItineraryForm
 
 # Create your views here.
@@ -36,6 +39,22 @@ def add_itinerary(request, destination_id):
         new_itinerary.destination_id = destination_id
         new_itinerary.save()
     return redirect("detail", destination_id=destination_id)
+
+
+def add_media(request, destination_id):
+    media_file = request.FILES.get('media-file', None)
+    if media_file:
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex[:6] + media_file.name[media_file.name.rfind('.'):]
+        try:
+            bucket = os.environ['S3_BUCKET']
+            s3.upload_fileobj(media_file, bucket, key)
+            url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
+            Media.objects.create(url=url, destination_id=destination_id)
+        except Exception as e:
+            print('An error occurred uploading file to S3')
+            print(e)
+    return redirect('detail', destination_id=destination_id)
 
 
 class DestinationCreate(CreateView):
