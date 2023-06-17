@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 # Create your models here.
 
@@ -41,6 +42,9 @@ class Destination(models.Model):
     def get_absolute_url(self):
         return reverse("detail", kwargs={"destination_id": self.id})
 
+    def activity_for_today(self):
+        return self.itinerary_set.count() >= 1
+
 
 class Itinerary(models.Model):
     date = models.DateField("Itinerary Date")
@@ -49,7 +53,7 @@ class Itinerary(models.Model):
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_activities_display()} on {self.date} and {self.activities}"
+        return f"{self.get_activity_display()} on {self.date} and {self.activities}"
 
     class Meta:
         ordering = ["-date", "time"]

@@ -19,6 +19,13 @@
       <a href="{% url 'destinations_delete' destination.id %}">Delete</a>
     </div>
 </div>
+  <br>
+
+  {% if destination.activity_for_today %}
+      <div class="card-panel teal-text center-align">Enjoy your journey!</div>
+  {% else %}
+      <div class="card-panel red-text center-align">Would you like to update today's itinerary?</div>
+  {% endif %}
 
 
 <div class="row">
