@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Destination
+from .forms import ItineraryForm
 
 # Create your views here.
 
@@ -20,7 +21,12 @@ def destinations_index(request):
 
 def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
-    return render(request, "destinations/detail.html", {"destination": destination})
+    itinerary_form = ItineraryForm()
+    return render(
+        request,
+        "destinations/detail.html",
+        {"destination": destination, "itinerary_form": itinerary_form},
+    )
 
 
 class DestinationCreate(CreateView):
