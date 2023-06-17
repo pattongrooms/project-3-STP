@@ -41,7 +41,7 @@ def add_itinerary(request, destination_id):
     return redirect("detail", destination_id=destination_id)
 
 
-def add_media(request, _id):
+def add_media(request, destination_id):
     media_file = request.FILES.get('media-file', None)
     if media_file:
         s3 = boto3.client('s3')
