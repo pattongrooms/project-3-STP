@@ -29,7 +29,7 @@
       {% csrf_token %}
       <input type="file" name="media-file">
       <br><br>
-      <button type="submit" class="btn">UPLOAD MEDIA</button>
+      <button type="submit" class="btn blue darken-4">UPLOAD MEDIA</button>
   </form>
 
   <br>
@@ -47,7 +47,7 @@
       <form action="{% url 'add_itinerary' destination.id %}" method="POST">
         {% csrf_token %}
         {{ itinerary_form.as_p }}
-        <input type="submit" class="btn" value="Update Itinerary" />
+        <input type="submit" class="btn blue darken-4" value="UPDATE ITINERARY" />
       </form>
     </div>
   </div>
