@@ -8,18 +8,13 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ destination.country }}</span>
-        <p>Country: {{ destination.country }}</p>
-        <p>State: {{ destination.state|linebreaks }}</p>
-        <p>City: {{ destination.city|linebreaks }}</p>
-        <p>Transport: {{ destination.transport|linebreaks }}</p>
-        <p>Start Date: {{ destination.start_date|linebreaks }}</p>
-        <p>End Date: {{ destination.end_date|linebreaks }}</p>
-        <p>Accomodations: {{ destination.accomodation|linebreaks }}</p>
+        <p>State: {{ destination.state }} City: {{ destination.city}}</p>
+        <p>Start Date: {{ destination.start_date}}</p>
+        <p>End Date: {{ destination.end_date}}</p>
       </div>
     </div>
   </a>
 
-  
 {% endfor %}
 
 {% endblock %}
