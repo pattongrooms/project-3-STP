@@ -23,25 +23,25 @@
   <body>
     <header class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper #0d47a1 blue darken-4">
+        <div class="nav-wrapper white">
           <ul>
             <li>
               <a
                 href="{% url 'home' %}"
-                class="left brand-logo"
+                class="left brand-logo blue-grey-text"
                 >&nbsp;&nbsp;JourneyMate</a
               >
             </li>
           </ul>
           <ul class="right">
-              <li><a href="{% url 'about' %}">ABOUT</a></li>
+              <li><a class="blue-grey-text" href="{% url 'about' %}">ABOUT</a></li>
             {% if user.is_authenticated %}
-              <li><a href="{% url 'destinations_create' %}">ADD A DESTINATION</a></li>
-              <li><a href="{% url 'index' %}">VIEW MY DESTINATIONS</a></li>
-              <li><a href="{% url 'logout' %}">LOG OUT</a></li>
+              <li><a class="blue-grey-text" href="{% url 'destinations_create' %}">ADD A DESTINATION</a></li>
+              <li><a class="blue-grey-text" href="{% url 'index' %}">VIEW MY DESTINATIONS</a></li>
+              <li><a class="blue-grey-text" href="{% url 'logout' %}">LOG OUT</a></li>
             {% else %}
-              <li><a href="{% url 'signup' %}">SIGN UP</a></li>
-              <li><a href="{% url 'login' %}">LOG IN</a></li>
+              <li><a class="blue-grey-text" href="{% url 'signup' %}">SIGN UP</a></li>
+              <li><a class="blue-grey-text" href="{% url 'login' %}">LOG IN</a></li>
             {% endif %}
           </ul>
         </div>
