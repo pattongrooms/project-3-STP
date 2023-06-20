@@ -45,5 +45,11 @@ urlpatterns = [
       'destinations/weather/',
       views.weather,
       name='weather',
+    ),
+
+    path(
+      'blogs/blog/',
+      views.BlogPostCreate.as_view(),
+      name='blog',
     )
 ]

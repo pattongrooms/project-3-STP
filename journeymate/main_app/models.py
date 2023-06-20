@@ -62,3 +62,10 @@ class Media(models.Model):
 
     def __str__(self):
         return f"Media for destination_id: {self.destination_id} @{self.url}"
+
+class Blog(models.Model):
+  destination_name = models.CharField(max_length=100)
+  trip_post = models.TextField(max_length=500)
+
+  def __str__(self):
+    return f"Blog post for destination_id: {self.blog_id}"
