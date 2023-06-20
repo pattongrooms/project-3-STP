@@ -40,10 +40,10 @@ def destinations_detail(request, destination_id):
     )
 
 
-def weather(request, destination_id):
+def weather(request):
   key = os.environ['WEATHER_ACCESS_KEY']
   url = f'http://api.openweathermap.org/data/2.5/weather?q=Boston&units=imperial&APPID={key}'
-  city = ''
+  city = 'Boston'
   r = requests.get(url.format(city)).json()
 
   destination_weather = {
