@@ -45,5 +45,11 @@ urlpatterns = [
       'destinations/weather/',
       views.weather,
       name='weather',
+    ),
+
+    path(
+      'blogs/blog/',
+      views.blog_post,
+      name='blog',
     )
 ]
