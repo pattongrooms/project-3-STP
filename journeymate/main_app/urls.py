@@ -49,7 +49,7 @@ urlpatterns = [
 
     path(
       'blogs/blog/',
-      views.blog_post,
+      views.BlogPostCreate.as_view(),
       name='blog',
     )
 ]
