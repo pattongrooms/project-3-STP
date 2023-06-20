@@ -55,7 +55,7 @@ def weather(request, destination_id):
 
   context = {'destination_weather': destination_weather}
 
-  return render(request, 'destinations/weather/weather.html', context)
+  return render(request, 'destinations/detail.html', context)
 
 
 @login_required

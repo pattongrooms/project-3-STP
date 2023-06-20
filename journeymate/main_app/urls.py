@@ -43,7 +43,7 @@ urlpatterns = [
 
     path(
       'destinations/<int:destination_id>/weather/',
-      views.weather,
-      name='weather',
+      views.destinations_detail,
+      name='destinations_detail',
     )
 ]
