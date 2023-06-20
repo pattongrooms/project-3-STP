@@ -1,6 +1,7 @@
 import uuid
 import boto3
 import os
+import requests
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -37,6 +38,22 @@ def destinations_detail(request, destination_id):
         "destinations/detail.html",
         {"destination": destination, "itinerary_form": itinerary_form},
     )
+
+
+@login_required
+def weather(request, destination_id):
+  url = f'api.openweathermap.org/data/2.5/weather?q=()&units=imperial&APPID={weather_access_key}'
+  city = ''
+  r = requests.get(url.format(city)).json()
+
+  destination_weather = {
+    'city': city,
+    'temperature': r['main']['temp'],
+    'description': r['weather'][0]['description'],
+    'icon': r['weather'][0]['icon'],
+  }
+
+  return render(request, 'weather/weather.html')
 
 
 @login_required
