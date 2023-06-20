@@ -13,7 +13,9 @@
     <p>Start Date: {{ destination.start_date}}</p>
     <p>End Date: {{ destination.end_date}}</p>
     <p>Accomodations: {{ destination.accomodations}}</p>
-    
+    Temperature: {{ weather.temperature }}
+    Forecast: {{ weather.description }}
+    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
     
   </div>
   <div class="card-action">
