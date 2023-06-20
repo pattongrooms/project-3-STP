@@ -32,15 +32,26 @@ def destinations_index(request):
 @login_required
 def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
+    key = os.environ['WEATHER_ACCESS_KEY']
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={ destination.city }&units=imperial&APPID={key}'
+    city = destination.city
+    r = requests.get(url.format(city)).json()
+    destination_weather = {
+    'city': city,
+    'temperature': r['main']['temp'],
+    'description': r['weather'][0]['description'],
+    'icon': r['weather'][0]['icon'],
+    }
+    context = {'destination_weather': destination_weather}
     itinerary_form = ItineraryForm()
     return render(
         request,
         "destinations/detail.html",
-        {"destination": destination, "itinerary_form": itinerary_form},
+        {"destination": destination, "itinerary_form": itinerary_form, 'weather': destination_weather},
     )
 
-@login_required
-def weather(request):
+
+def weather(request, destination):
   key = os.environ['WEATHER_ACCESS_KEY']
   url = f'http://api.openweathermap.org/data/2.5/weather?q=Boston&units=imperial&APPID={key}'
   city = 'Boston'
