@@ -53,9 +53,9 @@ def weather(request, destination_id):
     'icon': r['weather'][0]['icon'],
   }
 
-  print(destination_weather)
+  context = {'destination_weather': destination_weather}
 
-  return render(request, 'destinations/weather/weather.html')
+  return render(request, 'destinations/weather/weather.html', context)
 
 
 @login_required
