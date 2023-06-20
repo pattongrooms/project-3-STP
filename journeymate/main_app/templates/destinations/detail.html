@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Destinations Details</h1>
+<h1>Journey Details</h1>
 
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ destination.name }}</span>
     <p>Country: {{ destination.country }}</p>
-    <p>State: {{ destination.state|linebreaks }}</p>
-    <p>City: {{ destination.city|linebreaks }}</p>
-    <p>Transport: {{ destination.transportation|linebreaks }}</p>
-    <p>Start Date: {{ destination.start_date|linebreaks }}</p>
-    <p>End Date: {{ destination.end_date|linebreaks }}</p>
-    <p>Accomodations: {{ destination.accomodations|linebreaks }}</p>
+    <p>State: {{ destination.state}}</p>
+    <p>City: {{ destination.city}}</p>
+    <p>Transport: {{ destination.transportation}}</p>
+    <p>Start Date: {{ destination.start_date}}</p>
+    <p>End Date: {{ destination.end_date}}</p>
+    <p>Accomodations: {{ destination.accomodations}}</p>
   </div>
     <div class="card-action">
       <a href="{% url 'destinations_update' destination.id %}">Edit</a>
@@ -23,21 +23,21 @@
   {% for media in destination.media_set.all %}
       <img class="responsive-img card-panel" src="{{media.url}}">
     {% empty %}
-      <div class="card-panel teal-text center-align">No Media Uploaded</div>
+      <div class="card-panel teal-text center-align">NO MEDIA UPLOADED</div>
     {% endfor %}
     <form action="{% url 'add_media' destination.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
       <input type="file" name="media-file">
       <br><br>
-      <button type="submit" class="btn">Upload Media</button>
+      <button type="submit" class="btn blue darken-4">UPLOAD MEDIA</button>
   </form>
 
   <br>
 
   {% if destination.activity_for_today %}
-      <div class="card-panel teal-text center-align">Enjoy your journey!</div>
+      <div class="card-panel teal-text center-align">ENJOY YOUR JOURNEY!</div>
   {% else %}
-      <div class="card-panel red-text center-align">Would you like to update today's itinerary?</div>
+      <div class="card-panel red-text center-align">WOULD YOU LIKE TO UPDATE TODAY'S ITINERARY?</div>
   {% endif %}
 
 
@@ -47,7 +47,7 @@
       <form action="{% url 'add_itinerary' destination.id %}" method="POST">
         {% csrf_token %}
         {{ itinerary_form.as_p }}
-        <input type="submit" class="btn" value="Update Itinerary" />
+        <input type="submit" class="btn blue darken-4" value="UPDATE ITINERARY" />
       </form>
     </div>
   </div>

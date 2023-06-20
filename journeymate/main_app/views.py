@@ -1,6 +1,7 @@
 import uuid
 import boto3
 import os
+import requests
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -84,7 +85,8 @@ def signup(request):
 
 class DestinationCreate(LoginRequiredMixin, CreateView):
     model = Destination
-    fields = ['start_date', 'end_date', 'country', 'state', 'city', 'transportation', 'accomodations']
+    fields = ['start_date', 'end_date', 'country',
+              'state', 'city', 'transportation', 'accomodations']
 
     def form_valid(self, form):
         form.instance.user = self.request.user

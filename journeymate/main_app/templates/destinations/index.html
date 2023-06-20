@@ -4,22 +4,16 @@
 <h1>Destinations Index</h1>
 
 {% for destination in destinations %}
-  <a href="{% url 'detail' destination.id %}">
+  <a class="blue-text text-darken-4" href="{% url 'detail' destination.id %}">
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ destination.country }}</span>
-        <p>Country: {{ destination.country }}</p>
-        <p>State: {{ destination.state|linebreaks }}</p>
-        <p>City: {{ destination.city|linebreaks }}</p>
-        <p>Transport: {{ destination.transport|linebreaks }}</p>
-        <p>Start Date: {{ destination.start_date|linebreaks }}</p>
-        <p>End Date: {{ destination.end_date|linebreaks }}</p>
-        <p>Accomodations: {{ destination.accomodation|linebreaks }}</p>
+        <p>{{ destination.city}}, {{ destination.state }}</p>
+        <p>{{ destination.start_date}} - {{ destination.end_date}}</p>
       </div>
     </div>
   </a>
 
-  
 {% endfor %}
 
 {% endblock %}
