@@ -40,6 +40,24 @@ def destinations_detail(request, destination_id):
     )
 
 
+def weather(request, destination_id):
+  key = os.environ['WEATHER_ACCESS_KEY']
+  url = f'http://api.openweathermap.org/data/2.5/weather?q=Boston&units=imperial&APPID={key}'
+  city = ''
+  r = requests.get(url.format(city)).json()
+
+  destination_weather = {
+    'city': city,
+    'temperature': r['main']['temp'],
+    'description': r['weather'][0]['description'],
+    'icon': r['weather'][0]['icon'],
+  }
+
+  print(destination_weather)
+
+  return render(request, 'destinations/weather/weather.html')
+
+
 @login_required
 def add_itinerary(request, destination_id):
     form = ItineraryForm(request.POST)

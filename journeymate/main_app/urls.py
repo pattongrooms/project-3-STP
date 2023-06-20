@@ -36,5 +36,14 @@ urlpatterns = [
         views.add_media,
         name='add_media'
     ),
-    path('accounts/signup/', views.signup, name='signup'),
+    path(
+      'accounts/signup/',
+      views.signup,
+      name='signup'),
+
+    path(
+      'destinations/<int:destination_id>/weather/',
+      views.weather,
+      name='weather',
+    )
 ]
