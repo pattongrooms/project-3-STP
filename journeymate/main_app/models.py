@@ -68,7 +68,7 @@ class Blog(models.Model):
   trip_post = models.TextField(max_length=500)
 
   def __str__(self):
-    return f"Blog post for blog_id: {self.blog_id}"
+    return f"Blog post for blog_id: {self.blog_id} @{self.url}"
 
   def get_absolute_url(self):
-        return reverse("home", kwargs={"blog_id": self.id})
+    return reverse("home")
