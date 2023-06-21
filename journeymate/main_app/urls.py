@@ -44,5 +44,12 @@ urlpatterns = [
         views.BlogPostCreate.as_view(),
         name="blog_create",
     ),
+    path(
+        "blogs/blog_form/",
+        views.BlogPostCreate.as_view(),
+        name="blog_create",
+    ),
     path("", views.home, name="blogs_index"),
+    path("blog/<int:pk>/update/", views.BlogUpdate.as_view(), name="blogs_update"),
+    path("blog/<int:pk>/delete/", views.BlogDelete.as_view(), name="blogs_delete"),
 ]

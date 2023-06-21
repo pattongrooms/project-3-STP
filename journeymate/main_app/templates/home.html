@@ -9,8 +9,11 @@
         <span class="card-title">{{ blog.destination_name }}</span>
         <p>{{ blog.trip_post}}</p>
       </div>
+      <div class="card-action">
+        <a href="{% url 'blogs_update' blog.id %}">Edit</a>
+        <a href="{% url 'blogs_delete' blog.id %}">Delete</a>
+      </div>
     </div>
-  </a>
 
 {% endfor %}
 
