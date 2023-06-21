@@ -54,5 +54,17 @@ urlpatterns = [
     ),
     path(
         '', views.home, name='blogs_index'
+    ),
+
+    path(
+      'blog/<int:pk>/update/', 
+      views.BlogUpdate.as_view(), 
+      name="blogs_update"
+    ),
+
+    path(
+      'blog/<int:pk>/delete/',
+      views.BlogDelete.as_view(),
+      name="blogs_delete"
     )
 ]

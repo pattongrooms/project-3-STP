@@ -10,7 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Destination, Media, Blog
-from .forms import ItineraryForm
+from .forms import ItineraryForm, BlogForm
 
 # Create your views here.
 
@@ -141,4 +141,13 @@ class BlogPostCreate(LoginRequiredMixin, CreateView):
   def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+class BlogUpdate(LoginRequiredMixin, UpdateView):
+  model = Blog
+  fields = ['destination_name', 'trip_post']
+
+
+class BlogDelete(LoginRequiredMixin, DeleteView):
+  model = Blog
+  success_url = '/'
 
