@@ -48,8 +48,8 @@ urlpatterns = [
     ),
 
     path(
-      'blogs/blog/',
+      'blogs/blog_form/',
       views.BlogPostCreate.as_view(),
-      name='blog',
+      name='blog_create',
     )
 ]
