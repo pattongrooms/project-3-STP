@@ -2,12 +2,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path(
-        "", views.home, name="home"),
-    path(
-        "about/", views.about, name="about"),
-    path(
-        "destinations/", views.destinations_index, name="index"),
+    path("", views.home, name="home"),
+    path("about/", views.about, name="about"),
+    path("destinations/", views.destinations_index, name="index"),
     path(
         "destinations/<int:destination_id>/", views.destinations_detail, name="detail"
     ),
@@ -32,24 +29,19 @@ urlpatterns = [
         name="add_itinerary",
     ),
     path(
-        'destinations/<int:destination_id>/add_media/',
+        "destinations/<int:destination_id>/add_media/",
         views.add_media,
-        name='add_media'
+        name="add_media",
+    ),
+    path("accounts/signup/", views.signup, name="signup"),
+    path(
+        "destinations/weather/",
+        views.weather,
+        name="weather",
     ),
     path(
-      'accounts/signup/',
-      views.signup,
-      name='signup'),
-
-    path(
-      'destinations/weather/',
-      views.weather,
-      name='weather',
+        "blogs/blog/",
+        views.BlogPostCreate.as_view(),
+        name="blog",
     ),
-
-    path(
-      'blogs/blog/',
-      views.BlogPostCreate.as_view(),
-      name='blog',
-    )
 ]
