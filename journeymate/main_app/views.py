@@ -9,7 +9,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Destination, Media, Blog
+from .models import Destination, Media, Blog, Itinerary
 from .forms import ItineraryForm, BlogForm
 
 # Create your views here.
@@ -160,3 +160,13 @@ class BlogUpdate(LoginRequiredMixin, UpdateView):
 class BlogDelete(LoginRequiredMixin, DeleteView):
     model = Blog
     success_url = "/"
+
+
+class ItineraryUpdate(LoginRequiredMixin, UpdateView):
+    model = Itinerary
+    fields = ["date", "time", "activities"]
+
+
+class ItineraryDelete(LoginRequiredMixin, DeleteView):
+    model = Blog
+    success_url = "/destinations"
