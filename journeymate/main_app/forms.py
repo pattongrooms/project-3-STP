@@ -7,6 +7,7 @@ class ItineraryForm(ModelForm):
         model = Itinerary
         fields = ["date", "time", "activities"]
 
+
 class BlogForm(ModelForm):
     class Meta:
         model = Blog

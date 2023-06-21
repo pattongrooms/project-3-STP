@@ -67,7 +67,7 @@ class Blog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Blog post for destination_id: {self.blog_id}"
+        return f"Blog post for blog_id: {self.id}"
 
     def get_absolute_url(self):
         return reverse("home")
