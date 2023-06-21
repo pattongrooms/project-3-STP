@@ -16,8 +16,8 @@ from .forms import ItineraryForm
 
 
 def home(request):
-    
-    return render(request, "home.html")
+    blogs = Blog.objects.all()
+    return render(request, "home.html", {"blogs": blogs})
 
 
 def about(request):
