@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Destination, Media, Blog, Itinerary
 from .forms import ItineraryForm, BlogForm
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -169,4 +170,8 @@ class ItineraryUpdate(LoginRequiredMixin, UpdateView):
 
 class ItineraryDelete(LoginRequiredMixin, DeleteView):
     model = Itinerary
-    success_url = "/"
+    
+    def get_success_url(self):
+        destination = self.object.destination
+        return reverse_lazy( 'detail', kwargs={'destination_id': destination.id})
+    
