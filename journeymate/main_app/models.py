@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
+
 # Create your models here.
 
 TRANSPORTS = (
@@ -25,12 +26,8 @@ class Destination(models.Model):
     country = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
-    transportation = models.CharField(
-        max_length=100
-    )
-    accomodations = models.CharField(
-        max_length=100
-    )
+    transportation = models.CharField(max_length=100)
+    accomodations = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -63,13 +60,14 @@ class Media(models.Model):
     def __str__(self):
         return f"Media for destination_id: {self.destination_id} @{self.url}"
 
+
 class Blog(models.Model):
-  destination_name = models.CharField(max_length=100)
-  trip_post = models.TextField(max_length=500)
-  user = models.ForeignKey(User, on_delete=models.CASCADE)
+    destination_name = models.CharField(max_length=100)
+    trip_post = models.TextField(max_length=500)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-  def __str__(self):
-    return f"Blog post for blog_id: {self.blog_id} @{self.url}"
+    def __str__(self):
+        return f"Blog post for destination_id: {self.blog_id}"
 
-  def get_absolute_url(self):
-    return reverse("home")
+    def get_absolute_url(self):
+        return reverse("home")

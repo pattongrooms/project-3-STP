@@ -40,8 +40,9 @@ urlpatterns = [
         name="weather",
     ),
     path(
-        "blogs/blog/",
+        "blogs/blog_form/",
         views.BlogPostCreate.as_view(),
-        name="blog",
+        name="blog_create",
     ),
+    path("", views.home, name="blogs_index"),
 ]
