@@ -51,5 +51,8 @@ urlpatterns = [
       'blogs/blog_form/',
       views.BlogPostCreate.as_view(),
       name='blog_create',
+    ),
+    path(
+        '', views.home, name='blogs_index'
     )
 ]

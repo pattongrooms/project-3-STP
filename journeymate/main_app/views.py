@@ -16,6 +16,7 @@ from .forms import ItineraryForm
 
 
 def home(request):
+    
     return render(request, "home.html")
 
 
@@ -135,6 +136,7 @@ class DestinationDelete(LoginRequiredMixin, DeleteView):
 class BlogPostCreate(LoginRequiredMixin, CreateView):
   model = Blog
   fields = ['destination_name', 'trip_post']
+  
 
   def form_valid(self, form):
         form.instance.user = self.request.user
