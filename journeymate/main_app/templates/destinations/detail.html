@@ -65,6 +65,8 @@
           <th>Date</th>
           <th>Time</th>
           <th>Activities</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -73,6 +75,8 @@
           <td>{{itinerary.date}}</td>
           <td>{{itinerary.time}}</td>
           <td>{{itinerary.activities}}</td>
+          <a href="{% url 'itinerary_update' itinerary.id %}">Edit</a>
+          <a href="{% url 'itinerary_delete' itinerary.id %}">Delete</a>
         </tr>
         {% endfor %}
       </tbody>
