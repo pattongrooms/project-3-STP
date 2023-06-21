@@ -5,10 +5,10 @@
 {% if object %}
   <h1>Edit <span class="blue darken-4">{{ object.name }}</span></h1>
 {% else %}
-  <h1>Add BLOG POST</h1>
+  <h1>ADD BLOG POST</h1>
 {% endif %}
 
-<form action="" method="POST">
+<form action="{% url 'home' %}" method="POST">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
