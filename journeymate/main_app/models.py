@@ -49,6 +49,9 @@ class Itinerary(models.Model):
     def __str__(self):
         return f"{self.get_activity_display()} on {self.date} and {self.activities}"
 
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={"destination_id": self.destination.id})
+
     class Meta:
         ordering = ["-date", "time"]
 

@@ -75,8 +75,8 @@
           <td>{{itinerary.date}}</td>
           <td>{{itinerary.time}}</td>
           <td>{{itinerary.activities}}</td>
-          <a href="{% url 'itinerary_update' destination.id %}">Edit</a>
-          <a href="{% url 'itinerary_delete' destination.id %}">Delete</a>
+          <a href="{% url 'itinerary_update' itinerary.id %}">Edit</a>
+          <a href="{% url 'itinerary_delete' itinerary.id %}">Delete</a>
         </tr>
         {% endfor %}
       </tbody>

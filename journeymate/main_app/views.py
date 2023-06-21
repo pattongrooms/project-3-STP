@@ -168,5 +168,5 @@ class ItineraryUpdate(LoginRequiredMixin, UpdateView):
 
 
 class ItineraryDelete(LoginRequiredMixin, DeleteView):
-    model = Blog
-    success_url = "/destinations"
+    model = Itinerary
+    success_url = "/"

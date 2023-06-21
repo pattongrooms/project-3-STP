@@ -29,14 +29,14 @@ urlpatterns = [
         name="add_itinerary",
     ),
     path(
-        "destinations/<int:destination_id>/delete_itinerary/",
+        "destinations/<int:pk>/delete_itinerary/",
         views.ItineraryDelete.as_view(),
-        name="delete_itinerary",
+        name="itinerary_delete",
     ),
     path(
-        "destinations/<int:destination_id>/update_itinerary/",
+        "destinations/<int:pk>/update_itinerary/",
         views.ItineraryUpdate.as_view(),
-        name="update_itinerary",
+        name="itinerary_update",
     ),
     path(
         "destinations/<int:destination_id>/add_media/",
