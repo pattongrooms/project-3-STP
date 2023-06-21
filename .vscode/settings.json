@@ -1,6 +1,10 @@
 {
   "[python]": {
+<<<<<<< HEAD
     "editor.defaultFormatter": "ms-python.autopep8"
+=======
+    "editor.defaultFormatter": "ms-python.black-formatter"
+>>>>>>> 93c4c90ab724ceba641b9f9b0ffc8e72987c6c99
   },
   "python.formatting.provider": "none"
 }

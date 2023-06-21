@@ -13,12 +13,17 @@
     <p>Start Date: {{ destination.start_date}}</p>
     <p>End Date: {{ destination.end_date}}</p>
     <p>Accomodations: {{ destination.accomodations}}</p>
+    Temperature: {{ weather.temperature }}
+    Forecast: {{ weather.description }}
+    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+    
   </div>
-    <div class="card-action">
-      <a href="{% url 'destinations_update' destination.id %}">Edit</a>
-      <a href="{% url 'destinations_delete' destination.id %}">Delete</a>
-    </div>
+  <div class="card-action">
+    <a href="{% url 'destinations_update' destination.id %}">Edit</a>
+    <a href="{% url 'destinations_delete' destination.id %}">Delete</a>
+  </div>
 </div>
+
 
   {% for media in destination.media_set.all %}
       <img class="responsive-img card-panel" src="{{media.url}}">

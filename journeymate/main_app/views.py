@@ -9,7 +9,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Destination, Media
+from .models import Destination, Media, Blog
 from .forms import ItineraryForm
 
 # Create your views here.
@@ -32,18 +32,29 @@ def destinations_index(request):
 @login_required
 def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
+    key = os.environ['WEATHER_ACCESS_KEY']
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={ destination.city }&units=imperial&APPID={key}'
+    city = destination.city
+    r = requests.get(url.format(city)).json()
+    destination_weather = {
+    'city': city,
+    'temperature': r['main']['temp'],
+    'description': r['weather'][0]['description'],
+    'icon': r['weather'][0]['icon'],
+    }
+    context = {'destination_weather': destination_weather}
     itinerary_form = ItineraryForm()
     return render(
         request,
         "destinations/detail.html",
-        {"destination": destination, "itinerary_form": itinerary_form},
+        {"destination": destination, "itinerary_form": itinerary_form, 'weather': destination_weather},
     )
 
 
-def weather(request, destination_id):
+def weather(request, destination):
   key = os.environ['WEATHER_ACCESS_KEY']
   url = f'http://api.openweathermap.org/data/2.5/weather?q=Boston&units=imperial&APPID={key}'
-  city = ''
+  city = 'Boston'
   r = requests.get(url.format(city)).json()
 
   destination_weather = {
@@ -119,3 +130,13 @@ class DestinationUpdate(LoginRequiredMixin, UpdateView):
 class DestinationDelete(LoginRequiredMixin, DeleteView):
     model = Destination
     success_url = "/destinations"
+
+
+class BlogPostCreate(LoginRequiredMixin, CreateView):
+  model = Blog
+  fields = ['destination_name', 'trip_post']
+
+  def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
