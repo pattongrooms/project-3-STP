@@ -149,5 +149,5 @@ class BlogUpdate(LoginRequiredMixin, UpdateView):
 
 class BlogDelete(LoginRequiredMixin, DeleteView):
   model = Blog
-  success_url = '/destinations'
+  success_url = '/'
 
