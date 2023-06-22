@@ -2,64 +2,34 @@
 {% block content %}
 
 <h1>Journey Details</h1>
-
-<div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ destination.country }}</span>
-    <section class="journey-detail-top">
-      <p>{{ destination.city}}, {{ destination.state}}</p>
-      <p>{{ destination.start_date}} - {{ destination.end_date}}</p>
-      <p>Transportation: {{ destination.transportation}}</p>
-      <p>Accomodations: {{ destination.accomodations}}</p>
-
-      <section>
-        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
-        <span>{{ weather.temperature }}</span>
-        <p>{{ weather.description }}</p>
-      <section>
-    </section>
-  </div>
-  <div class="card-action">
-    <a class="waves-effect waves-light btn amber accent-3" href="{% url 'destinations_update' destination.id %}">Edit</a>
-    <a class="waves-effect waves-light btn amber accent-3" href="{% url 'destinations_delete' destination.id %}">Delete</a>
-  </div>
-</div>
-
-
-  {% for media in destination.media_set.all %}
-      <img class="responsive-img card-panel" src="{{media.url}}">
-    {% empty %}
-      <div class="card-panel teal-text center-align">NO MEDIA UPLOADED</div>
-    {% endfor %}
-    <form action="{% url 'add_media' destination.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-      {% csrf_token %}
-      <span class="btn btn-file amber accent-3">
-        <i class="material-icons left">add_to_photos</i>BROWSE
-      <input type="file" name="media-file">
-    </span>
-      <br><br>
-      <button type="submit" class="btn amber accent-3">UPLOAD MEDIA</button>
-    </form>
-
-  <br>
-
-  {% if destination.activity_for_today %}
-      <div class="card-panel teal-text center-align">ENJOY YOUR JOURNEY!</div>
-  {% else %}
-      <div class="card-panel blue center-align">WOULD YOU LIKE TO UPDATE TODAY'S ITINERARY?</div>
-  {% endif %}
-
-
 <div class="row">
-  <div class="s12">
-    <div class="col s6">
-      <form action="{% url 'add_itinerary' destination.id %}" method="POST">
-        {% csrf_token %}
-        {{ itinerary_form.as_p }}
-        <input type="submit" class="btn amber accent-3" value="UPDATE ITINERARY" />
-      </form>
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ destination.country }}</span>
+        <section class="journey-detail-top">
+          <p>{{ destination.city}}, {{ destination.state}}</p>
+          <p>{{ destination.start_date}} - {{ destination.end_date}}</p>
+          <p>Transportation: {{ destination.transportation}}</p>
+          <p>Accomodations: {{ destination.accomodations}}</p>
+
+          <section>
+            <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+            <span>{{ weather.temperature }}</span>
+            <p>{{ weather.description }}</p>
+          <section>
+        </section>
+      </div>
+      <div class="card-action">
+        <a class="waves-effect waves-light btn blue-grey lighten-1" href="{% url 'destinations_update' destination.id %}">Edit</a>
+        <a class="waves-effect waves-light btn blue-grey lighten-1" href="{% url 'destinations_delete' destination.id %}">Delete</a>
+      </div>
     </div>
   </div>
+
+
+
+
 
 
   <div class="col s6">
@@ -81,12 +51,12 @@
           <td>{{itinerary.activities}}</td>
           <td>
             <span>
-              <a class="itinerary-link" href="{% url 'itinerary_update' itinerary.id %}"><i class="material-icons left">edit</i></a>
+              <a class="itinerary-link" href="{% url 'itinerary_update' itinerary.id %}"><i class="material-icons left amber-text text-accent-3">edit</i></a>
             </span>
           </td>
           <td>
             <span>
-            <a class="itinerary-link" href="{% url 'itinerary_delete' itinerary.id %}"><i class="material-icons left">delete_forever</i></a>
+            <a class="itinerary-link" href="{% url 'itinerary_delete' itinerary.id %}"><i class="material-icons left amber-text text-accent-3">delete_forever</i></a>
           </span>
           </td>
         </tr>
@@ -94,6 +64,46 @@
       </tbody>
     </table>
   </div>
+</div>
+
+
+  <br>
+
+  {% if destination.activity_for_today %}
+      <div class="card-panel teal-text center-align">ENJOY YOUR JOURNEY!</div>
+  {% else %}
+      <div class="card-panel blue center-align">WOULD YOU LIKE TO UPDATE TODAY'S ITINERARY?</div>
+  {% endif %}
+
+
+<div class="row">
+  <div class="s12">
+    <div class="col s6">
+      <form action="{% url 'add_itinerary' destination.id %}" method="POST">
+        {% csrf_token %}
+        {{ itinerary_form.as_p }}
+        <input type="submit" class="btn blue-grey lighten-1" value="UPDATE ITINERARY" />
+      </form>
+    </div>
+  </div>
+
+  <div class="col s6">
+    {% for media in destination.media_set.all %}
+        <img class="responsive-img card-panel" src="{{media.url}}">
+      {% empty %}
+        <div class="card-panel teal-text center-align">NO MEDIA UPLOADED</div>
+      {% endfor %}
+      <form action="{% url 'add_media' destination.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+        {% csrf_token %}
+        <span class="btn btn-file blue-grey lighten-1">
+          <i class="material-icons left">add_to_photos</i>BROWSE
+        <input type="file" name="media-file">
+      </span>
+        <br><br>
+        <button type="submit" class="btn blue-grey lighten-1">UPLOAD MEDIA</button>
+      </form>
+    </div>
+
 </div>
 
 {% endblock %}
