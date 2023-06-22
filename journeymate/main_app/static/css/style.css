@@ -78,9 +78,11 @@ section div #home-card{
   border-radius: 5vmin;
   padding: 1vmin;
   color: #2e4052;
+  text-align: center;
 }
 
 .card-action {
   margin: 5vmin;
+  
 }
 
