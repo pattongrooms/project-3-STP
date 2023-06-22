@@ -2,6 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: 'Inter', sans-serif;
 }
 
 main {
@@ -11,4 +12,66 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+}
+
+.card {
+  border-radius: 5vmin;
+  padding: 1vmin;
+}
+
+.nav-wrapper {
+background-color: #2e4052;
+}
+
+.datepicker-modal {
+  border-radius: 5vmin;
+  padding: 4vmin;
+}
+
+
+.card-action {
+  margin: .5vmin;
+}
+
+.btn {
+  border-radius: 2vmin;
+}
+
+.datepicker-date-display {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 auto;
+  -ms-flex: 1 auto;
+  flex: 1 auto;
+  background-color: black;
+  color: #fff;
+  padding: 20px 22px;
+  font-weight: 500;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+#index-container {
+  display: grid;
+  grid-template-columns: repeat(3, 35vmin);
+  grid-template-rows: repeat(1, 22vmin);
+  gap: 3vmin;
+  margin: 5vmin 0 2vmin 0;
 }

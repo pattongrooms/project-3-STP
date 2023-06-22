@@ -5,18 +5,19 @@
 
 <div class="card">
   <div class="card-content">
-    <span class="card-title">{{ destination.name }}</span>
-    <p>Country: {{ destination.country }}</p>
-    <p>State: {{ destination.state}}</p>
-    <p>City: {{ destination.city}}</p>
-    <p>Transport: {{ destination.transportation}}</p>
-    <p>Start Date: {{ destination.start_date}}</p>
-    <p>End Date: {{ destination.end_date}}</p>
-    <p>Accomodations: {{ destination.accomodations}}</p>
-    Temperature: {{ weather.temperature }}
-    Forecast: {{ weather.description }}
-    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
-    
+    <span class="card-title">{{ destination.country }}</span>
+    <section class="journey-detail-top">
+      <p>{{ destination.city}}, {{ destination.state}}</p>
+      <p>{{ destination.start_date}} - {{ destination.end_date}}</p>
+      <p>Transportation: {{ destination.transportation}}</p>
+      <p>Accomodations: {{ destination.accomodations}}</p>
+
+      <section>
+        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+        <span>{{ weather.temperature }}</span>
+        <p>{{ weather.description }}</p>
+      <section>
+    </section>
   </div>
   <div class="card-action">
     <a href="{% url 'destinations_update' destination.id %}">Edit</a>
@@ -32,10 +33,13 @@
     {% endfor %}
     <form action="{% url 'add_media' destination.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
+      <span class="btn btn-file">
+        <i class="material-icons left">add_to_photos</i>BROWSE
       <input type="file" name="media-file">
+    </span>
       <br><br>
       <button type="submit" class="btn blue darken-4">UPLOAD MEDIA</button>
-  </form>
+    </form>
 
   <br>
 
@@ -75,24 +79,21 @@
           <td>{{itinerary.date}}</td>
           <td>{{itinerary.time}}</td>
           <td>{{itinerary.activities}}</td>
-          <a href="{% url 'itinerary_update' itinerary.id %}">Edit</a>
-          <a href="{% url 'itinerary_delete' itinerary.id %}">Delete</a>
+          <td>
+            <span>
+              <a class="itinerary-link" href="{% url 'itinerary_update' itinerary.id %}"><i class="material-icons left">edit</i></a>
+            </span>
+          </td>
+          <td>
+            <span>
+            <a class="itinerary-link" href="{% url 'itinerary_delete' itinerary.id %}"><i class="material-icons left">delete_forever</i></a>
+          </span>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
 </div>
-<script>
-  const dateEl = document.getElementById('id_date');
-  M.Datepicker.init(dateEl, {
-    format: 'yyyy-mm-dd',
-    defaultDate: new Date(),
-    setDefaultDate: true,
-    autoClose: true
-  });
-
-  
-</script>
 
 {% endblock %}
