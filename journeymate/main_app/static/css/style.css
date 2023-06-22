@@ -42,6 +42,8 @@ main {
   position: relative;
   overflow: hidden;
 }
+
+
 .btn-file input[type=file] {
   position: absolute;
   top: 0;
@@ -86,3 +88,20 @@ section div #home-card{
   
 }
 
+label {
+  font-size: large;
+  padding: 0;
+}
+
+th {
+  padding: -150px;
+}
+
+td {
+  padding: -50px;
+}
+
+blockquote {
+  font-size: 5em;
+  font-style: italic;
+}
