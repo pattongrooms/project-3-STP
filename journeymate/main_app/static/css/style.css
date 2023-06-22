@@ -25,6 +25,7 @@ main {
 
 .btn {
   border-radius: 2vmin;
+  margin: 10px;
 }
 
 .datepicker-date-display {
@@ -105,3 +106,15 @@ blockquote {
   font-size: 5em;
   font-style: italic;
 }
+
+form {
+  color: seashell;
+  background-color: seashell;
+  padding: 30px;
+  border-radius: 5vmin;
+}
+
+textarea {
+  height: 10vmin;
+}
+
