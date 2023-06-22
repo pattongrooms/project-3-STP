@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Destinations Index</h1>
+<span><blockquote>"Not All Those Who Wander Are Lost" - JRR TOLKIEN</blockquote></span>
 <section id="index-container">
 {% for destination in destinations %}
   <a id="index-container" class="blue-text text-darken-4" href="{% url 'detail' destination.id %}">
