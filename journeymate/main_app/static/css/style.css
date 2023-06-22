@@ -67,6 +67,7 @@ background-color: #2e4052;
   cursor: inherit;
   display: block;
 }
+
 #index-container {
   display: grid;
   grid-template-columns: repeat(3, 35vmin);
