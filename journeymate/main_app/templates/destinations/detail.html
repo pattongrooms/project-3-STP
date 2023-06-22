@@ -20,8 +20,8 @@
     </section>
   </div>
   <div class="card-action">
-    <a href="{% url 'destinations_update' destination.id %}">Edit</a>
-    <a href="{% url 'destinations_delete' destination.id %}">Delete</a>
+    <a class="waves-effect waves-light btn amber accent-3" href="{% url 'destinations_update' destination.id %}">Edit</a>
+    <a class="waves-effect waves-light btn amber accent-3" href="{% url 'destinations_delete' destination.id %}">Delete</a>
   </div>
 </div>
 
@@ -33,12 +33,12 @@
     {% endfor %}
     <form action="{% url 'add_media' destination.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
-      <span class="btn btn-file">
+      <span class="btn btn-file amber accent-3">
         <i class="material-icons left">add_to_photos</i>BROWSE
       <input type="file" name="media-file">
     </span>
       <br><br>
-      <button type="submit" class="btn blue darken-4">UPLOAD MEDIA</button>
+      <button type="submit" class="btn amber accent-3">UPLOAD MEDIA</button>
     </form>
 
   <br>
@@ -46,7 +46,7 @@
   {% if destination.activity_for_today %}
       <div class="card-panel teal-text center-align">ENJOY YOUR JOURNEY!</div>
   {% else %}
-      <div class="card-panel red-text center-align">WOULD YOU LIKE TO UPDATE TODAY'S ITINERARY?</div>
+      <div class="card-panel blue center-align">WOULD YOU LIKE TO UPDATE TODAY'S ITINERARY?</div>
   {% endif %}
 
 
@@ -56,7 +56,7 @@
       <form action="{% url 'add_itinerary' destination.id %}" method="POST">
         {% csrf_token %}
         {{ itinerary_form.as_p }}
-        <input type="submit" class="btn blue darken-4" value="UPDATE ITINERARY" />
+        <input type="submit" class="btn amber accent-3" value="UPDATE ITINERARY" />
       </form>
     </div>
   </div>
