@@ -3,6 +3,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
+  background-color: #2e4052;
+  color: seashell;
 }
 
 main {
@@ -75,9 +77,12 @@ section div #home-card{
 .card {
   border-radius: 5vmin;
   padding: 1vmin;
+  color: #2e4052;
+  text-align: center;
 }
 
 .card-action {
   margin: 5vmin;
+  
 }
 

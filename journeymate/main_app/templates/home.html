@@ -9,8 +9,8 @@
           <p>{{ blog.trip_post}}</p>
         </div>
         <div id="home-card" class="card-action">
-          <a href="{% url 'blogs_update' blog.id %}">Edit</a>
-          <a href="{% url 'blogs_delete' blog.id %}">Delete</a>
+          <a class="waves-effect waves-light btn amber accent-3" href="{% url 'blogs_update' blog.id %}">Edit</a>
+          <a class="waves-effect waves-light btn amber accent-3" href="{% url 'blogs_delete' blog.id %}">Delete</a>
         </div>
       </div>
 
