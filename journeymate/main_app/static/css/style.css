@@ -7,20 +7,12 @@ body {
 
 main {
   flex: 1 0 auto;
+  margin: 5vmin;
 }
 
-footer.page-footer {
-  padding-top: 0;
-  text-align: right;
-}
-
-.card {
-  border-radius: 5vmin;
-  padding: 1vmin;
-}
 
 .nav-wrapper {
-background-color: #2e4052;
+  background-color: #2e4052;
 }
 
 .datepicker-modal {
@@ -28,10 +20,6 @@ background-color: #2e4052;
   padding: 4vmin;
 }
 
-
-.card-action {
-  margin: .5vmin;
-}
 
 .btn {
   border-radius: 2vmin;
@@ -74,4 +62,22 @@ background-color: #2e4052;
   grid-template-rows: repeat(1, 22vmin);
   gap: 3vmin;
   margin: 5vmin 0 2vmin 0;
+  padding-bottom: 4vmin;
+  
 }
+
+section div #home-card{
+  border-radius: 4vmin;
+  padding: 2vmin;
+  margin: 2vmin;
+}
+
+.card {
+  border-radius: 5vmin;
+  padding: 1vmin;
+}
+
+.card-action {
+  margin: 5vmin;
+}
+
