@@ -15,6 +15,11 @@ main {
 
 .nav-wrapper {
   background-color: #2e4052;
+  color: seashell;
+}
+
+.dropdown-content-link{
+color: seashell;
 }
 
 .datepicker-modal {
@@ -65,10 +70,9 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 35vmin);
   grid-template-rows: repeat(1, 22vmin);
-  gap: 3vmin;
+  gap: 10vmin;
   margin: 5vmin 0 2vmin 0;
   padding-bottom: 4vmin;
-  
 }
 
 section div #home-card{
@@ -79,9 +83,23 @@ section div #home-card{
 
 .card {
   border-radius: 5vmin;
-  padding: 1vmin;
+  padding: 2.5vmin;
   color: #2e4052;
   text-align: center;
+  font-weight: 600;
+  padding-bottom: 4vmin;
+  margin-bottom: 30vmin;
+  background-color: seashell;
+}
+
+.blog-container {
+  margin: 3vmin;
+}
+
+#destination-index{
+  padding-bottom: 5vmin;
+  height: 30vmin;
+  background-color: seashell;
 }
 
 .card-action {
@@ -103,7 +121,7 @@ td {
 }
 
 blockquote {
-  font-size: 5em;
+  font-size: 3vmin;
   font-style: italic;
 }
 
@@ -114,7 +132,61 @@ form {
   border-radius: 5vmin;
 }
 
+.journey-detail-top, .card-title {
+  background-color: seashell;
+  font-size: large;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-title {
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+  margin: 0;
+}
+
 textarea {
   height: 10vmin;
 }
 
+#dropdown1 {
+  background-color: seashell;
+}
+
+h1, h4 {
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+}
+
+img.circle {
+  border-radius: 50vmin;
+}
+
+.card-reveal {
+  background-color: seashell;
+  line-height: 2.85vmin;
+}
+
+#collapse-bg {
+  background-color: #2e4052;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+}
+
+#about-font {
+  font-size: 2vmin;
+}
+
+/* #collapse-icon {
+  border-radius: 2vmin;
+} */
+
+#dropdown-content-link {
+  color: #2e4052;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+}
+
+#journey-msg, #update-msg {
+  background-color: #2e4052;
+}

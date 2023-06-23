@@ -21,6 +21,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{% static '../static/css/style.css'%}">
     <title>JourneyMate</title>
@@ -30,42 +34,34 @@
   <body>
     <header class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper white">
-          <ul id="dropdown1" class="dropdown-content">
+        <div class="nav-wrapper">
+          <ul id="dropdown1" class="dropdown-content amber accent-3">
 
-            <li><a class="blue-text text-darken-4" href="{% url 'about' %}">ABOUT</a></li>
+            <li><a id="dropdown-content-link" href="{% url 'about' %}">ABOUT</a></li>
             {% if user.is_authenticated %}
-              <li><a class="blue-text text-darken-4" href="{% url 'destinations_create' %}">ADD A DESTINATION</a></li>
-              <li><a class="blue-text text-darken-4" href="{% url 'index' %}">VIEW MY DESTINATIONS</a></li>
-              <li><a class="blue-text text-darken-4" href="{% url 'blog_create' %}">MAKE A POST</a></li>
-              <li><a
+              <li><a id="dropdown-content-link" href="{% url 'destinations_create' %}">ADD A DESTINATION</a></li>
+              <li><a id="dropdown-content-link" href="{% url 'index' %}">VIEW MY DESTINATIONS</a></li>
+              <li><a id="dropdown-content-link" href="{% url 'blog_create' %}">MAKE A POST</a></li>
+              <li><a id="dropdown-content-link"
               href="{% url 'home' %}"
-              class="blue-text text-darken-4"
+              
               >VIEW ALL POSTS</a></li>
-              <li><a class="blue-text text-darken-4" href="{% url 'logout' %}">LOG OUT</a></li>
+              <li><a id="dropdown-content-link" href="{% url 'logout' %}">LOG OUT</a></li>
             {% else %}
-              <li><a class="blue-text text-darken-4" href="{% url 'signup' %}">SIGN UP</a></li>
-              <li><a class="blue-text text-darken-4" href="{% url 'login' %}">LOG IN</a></li>
+              <li><a id="dropdown-content-link" href="{% url 'signup' %}">SIGN UP</a></li>
+              <li><a id="dropdown-content-link" href="{% url 'login' %}">LOG IN</a></li>
             {% endif %}
           </ul>
 
           <nav>
-            <div class="nav-wrapper white">
+            <div class="nav-wrapper">
                 <a
                   href="{% url 'home' %}"
-                  class="left brand-logo blue-text text-darken-4"
+                  class="left brand-logo amber-text text-accent-3"
                   >&nbsp;&nbsp;JourneyMate</a
                 >
                 <ul class="right show-on-small">
-
-                  <li><a class="blue-text text-darken-4" href="{% url 'about' %}">ABOUT</a></li>
-                {% if user.is_authenticated %}
-                  <li><a class="blue-text text-darken-4" href="{% url 'logout' %}">LOG OUT</a></li>
-                {% else %}
-                  <li><a class="blue-text text-darken-4" href="{% url 'signup' %}">SIGN UP</a></li>
-                  <li><a class="blue-text text-darken-4" href="{% url 'login' %}">LOG IN</a></li>
-                {% endif %}
-                <li><a class="dropdown-trigger blue-text text-darken-4" href="#!" data-target="dropdown1">DROP-DOWN MENU<i class="material-icons right">expand_more</i></a></li>
+                <li><a class="dropdown-trigger amber-text right-align text-accent-3" style="width: 200px !important" href="#!" data-target="dropdown1">MENU<i class="material-icons right">expand_more</i></a></li>
           </ul>
         </div>
       </nav>

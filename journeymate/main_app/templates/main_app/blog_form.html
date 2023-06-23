@@ -9,18 +9,18 @@
     <table>
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Edit BLOG POST" class="btn amber accent-3">
+    <input type="submit" value="Edit BLOG POST" class="btn blue-grey lighten-1">
   </form>
 {% else %}
 
-  <h1>ADD BLOG POST</h1>
+<h1 class="amber-text text-accent-3">Journal</h1>
 
-<form action="" method="POST" class="white-text">
+<form action="" method="POST" class="amber-text text-accent-3">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-  <input type="submit" value="ADD BLOG POST" class="btn amber accent-3">
+  <input type="submit" value="ADD BLOG POST" class="btn blue-grey lighten-1">
 </form>
 {% endif %}
 

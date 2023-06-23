@@ -2,44 +2,104 @@
 {% block content %}
 {% load static %}
 
-  <h1>About JourneyMate</h1>
-  <p>JourneyMate is your reliable travel companion, dedicated to simplifying your trip planning and keeping you informed about the weather conditions at your destination. With JourneyMate, you can effortlessly create and manage your travel itineraries while staying up-to-date with the latest weather forecasts.</p>
+  <h1 class="amber-text text-accent-3 center-align z-depth-3">About JourneyMate</h1>
+  <br>
+  <p id="about-font">JourneyMate is your reliable travel companion, dedicated to simplifying your trip planning and keeping you informed about the weather conditions at your destination. With JourneyMate, you can effortlessly create and manage your travel itineraries while staying up-to-date with the latest weather forecasts.</p>
+  <br>
+<h4 class="amber-text text-accent-3">Key Features:</h4>
+<ul class="collapsible">
+  <li id="collapse-outline">
+    <div id="collapse-bg" class="collapsible-header amber-text text-accent-3"><i class="material-icons">format_list_numbered</i>EFFORTLESS TRIP PLANNING</div>
+    <div class="collapsible-body"><span>JourneyMate offers a user-friendly interface to create and organize your travel itineraries. From selecting destinations to managing activities, accommodations, and transportation, everything is streamlined for a smooth and enjoyable trip planning process.</span></div>
+  </li>
+  <li>
+    <div id="collapse-bg" class="collapsible-header amber-text text-accent-3"><i class="material-icons">filter_drama</i> REAL-TIME WEATHER UPDATES</div>
+    <div class="collapsible-body"><span>Stay informed about the weather conditions at your chosen destinations. JourneyMate integrates with reliable weather data sources to provide you with accurate and up-to-date weather forecasts, ensuring you’re prepared for your journey.</span></div>
+  </li>
+  <li>
+    <div id="collapse-bg" class="collapsible-header amber-text text-accent-3"><i class="material-icons">gps_fixed</i>DESTINATION INSIGHTS</div>
+    <div class="collapsible-body"><span>Explore detailed information about various destinations worldwide. Discover key attractions, landmarks, and points of interest to enhance your travel experiences. JourneyMate provides valuable insights to help you make the most of your trip.</span></div>
+  </li>
+  <li>
+    <div id="collapse-bg" class="collapsible-header amber-text text-accent-3"><i class="material-icons">add_location</i>TRAVEL ITINERARY MANAGEMENT</div>
+    <div class="collapsible-body"><span>Organize your travel itinerary seamlessly within JourneyMate. Keep track of your daily activities, accommodations, transportation, and more. JourneyMate serves as your centralized hub for all trip-related details, keeping you organized throughout your journey.</span></div>
+  </li>
+  <li>
+    <div id="collapse-bg" class="collapsible-header amber-text text-accent-3"><i class="material-icons">event_note</i>TRIP MEMORIES</div>
+    <div class="collapsible-body"><span>Capture and preserve your travel memories with JourneyMate. Document your adventures by adding photos, notes, and stories to your trip timeline. Create a digital travel journal that allows you to relive your experiences and share them with friends and family.</span></div>
+  </li>
+</ul>  
 
-<h4>Key Features:</h4>
-<ol>
-  <li>Effortless Trip Planning: JourneyMate offers a user-friendly interface to create and organize your travel itineraries. From selecting destinations to managing activities, accommodations, and transportation, everything is streamlined for a smooth and enjoyable trip planning process.</li><br>
-  <li>Real-Time Weather Updates: Stay informed about the weather conditions at your chosen destinations. JourneyMate integrates with reliable weather data sources to provide you with accurate and up-to-date weather forecasts, ensuring you’re prepared for your journey.</li><br>
-  <li>Destination Insights: Explore detailed information about various destinations worldwide. Discover key attractions, landmarks, and points of interest to enhance your travel experiences. JourneyMate provides valuable insights to help you make the most of your trip.</li><br>
-  <li>Travel Itinerary Management: Organize your travel itinerary seamlessly within JourneyMate. Keep track of your daily activities, accommodations, transportation, and more. JourneyMate serves as your centralized hub for all trip-related details, keeping you organized throughout your journey.</li><br>
-  <li>Trip Memories: Capture and preserve your travel memories with JourneyMate. Document your adventures by adding photos, notes, and stories to your trip timeline. Create a digital travel journal that allows you to relive your experiences and share them with friends and family.</li><br>
-</ol>  
-<p>JourneyMate is your trusted companion for stress-free trip planning and weather updates. Whether you’re a solo traveler, a family on vacation, or a group of adventure seekers, JourneyMate provides the essential tools to plan your trips efficiently and stay informed about the weather conditions at your destinations.
+<br>
+<p id="about-font">JourneyMate is your trusted companion for stress-free trip planning and weather updates. Whether you’re a solo traveler, a family on vacation, or a group of adventure seekers, JourneyMate provides the essential tools to plan your trips efficiently and stay informed about the weather conditions at your destinations.
 Embark on unforgettable journeys with confidence and ease using JourneyMate. Start planning your next adventure today and experience the convenience of having all your travel information and weather updates in one place.</p>
+<br>
+<br>
 
 
-<h4>About The Team</h4>
+<h4 class="amber-text text-accent-3 center-align">About The Team</h4>
+<br>
+<br>
 <div class="row">
+            <div class="col s4">
+              <div class="card amber accent-3">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="circle activator" width="200" src="{% static 'images/pat3.png' %}">
+                </div>
+                <div class="card-content amber accent-3">
+                  <span class="card-title amber accent-3 activator grey-text text-darken-4">Patton Grooms<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal amber accent-3">
+                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                    <br>
+                    <p>Patton Grooms is a motivated software engineer from Tennessee. He specializes in web development and delivering seamless user experiences. He is committed to personal growth, expert development, and fostering positive team environments. Patton's desire for adventure and new experiences is what led him to join the JourneyMate team.</p>
+                </div>
+              </div>
+            </div>
 
-  <div class="col s4">
-    <img class="circle" width="200" src="{% static 'images/patton1.png' %}">
-    <p>Patton Grooms is a motivated software engineer from Tennessee. He specializes in web development and delivering seamless user experiences. He is committed to personal growth, expert development, and fostering positive team environments. Patton's desire for adventure and new experiences is what led him to join the JourneyMate team.</p>
-  </div>
-  <div class="col s4">
-    <img class="circle" width="200" src="{% static 'images/sam.png' %}">
-    <p>Sam is a software engineer from Boston. He began his journey in software engineering as a self-taught iOS Developer. He found a love for the thrill of solving problems, “…the feeling I get when I solve a bug is close to the same feeling I get when I am at the top of a rollercoaster just before the drop…”. Sam's life of travel and desire to help others who want to explore is what led him to the JourneyMate team.</p>
-  </div>
-  <div class="col s4">
-    <img class="circle" width="200" src="{% static 'images/taaj1.png' %}">
-    <p>Taaj is a solution-driven software engineer from Georgia. He leverages his expertise in behavioral analytics to elevate the user experience. With full-stack technical skills and a passion for service, Taaj is eager to build accessible technology that changes the world of travel for the better. His desire for traveling and experiencing new cultures is what led him to the JourneyMate team.</p>
-  </div>
+
+            <div class="col s4">
+              <div class="card amber accent-3">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="circle activator circular" width="200" src="{% static 'images/sam3.png' %}">
+                </div>
+                <div class="card-content amber accent-3">
+                  <span class="card-title amber accent-3 activator grey-text text-darken-4">Samuel Esserman<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal amber accent-3">
+                  <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                  <br>
+                  <p>Sam is a software engineer from Boston. He began his journey in software engineering as a self-taught iOS Developer. He found a love for the thrill of solving problems, “…the feeling I get when I solve a bug is close to the same feeling I get when I am at the top of a rollercoaster just before the drop…”. Sam's life of travel and desire to help others who want to explore is what led him to the JourneyMate team.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s4">
+              <div class="card amber accent-3">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="circle activator" width="200" src="{% static 'images/taaj3.png' %}">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator amber accent-3 grey-text text-darken-4">Taaj Andrews<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal amber accent-3">
+                  <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                  <br>
+                  <p>Taaj is a solution-driven software engineer from Georgia. He leverages his expertise in behavioral analytics to elevate the user experience. With full-stack technical skills and a passion for service, Taaj is eager to build accessible technology that changes the world of travel for the better. His desire for traveling and experiencing new cultures is what led him to the JourneyMate team.</p>
+                </div>   
+              </div>
+            </div>
 
 </div>
-
 <script>
 $(document).ready(function(){
   $('.materialboxed').materialbox();
 });
 </script>
-
+<script>
+    $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
 
   {% endblock %}
