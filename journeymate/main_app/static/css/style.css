@@ -89,6 +89,7 @@ section div #home-card{
   font-weight: 600;
   padding-bottom: 4vmin;
   margin-bottom: 30vmin;
+  background-color: seashell;
 }
 
 #destination-index{
@@ -140,4 +141,8 @@ form {
 
 textarea {
   height: 10vmin;
+}
+
+#dropdown1 {
+  background-color: seashell;
 }
