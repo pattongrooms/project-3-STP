@@ -30,10 +30,10 @@
   <body>
     <header class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper white">
-          <ul id="dropdown1" class="dropdown-content">
+        <div class="nav-wrapper">
+          <ul id="dropdown1" class="dropdown-content" style="width: 75px">
 
-            <li><a class="blue-text text-darken-4" href="{% url 'about' %}">ABOUT</a></li>
+            <li><a class="dropdown-content-link" href="{% url 'about' %}">ABOUT</a></li>
             {% if user.is_authenticated %}
               <li><a class="blue-text text-darken-4" href="{% url 'destinations_create' %}">ADD A DESTINATION</a></li>
               <li><a class="blue-text text-darken-4" href="{% url 'index' %}">VIEW MY DESTINATIONS</a></li>
@@ -50,22 +50,22 @@
           </ul>
 
           <nav>
-            <div class="nav-wrapper white">
+            <div class="nav-wrapper">
                 <a
                   href="{% url 'home' %}"
-                  class="left brand-logo blue-text text-darken-4"
+                  class="left brand-logo amber-text text-accent-3"
                   >&nbsp;&nbsp;JourneyMate</a
                 >
                 <ul class="right show-on-small">
 
-                  <li><a class="blue-text text-darken-4" href="{% url 'about' %}">ABOUT</a></li>
+                  <li><a class="amber-text text-accent-3" href="{% url 'about' %}">ABOUT</a></li>
                 {% if user.is_authenticated %}
-                  <li><a class="blue-text text-darken-4" href="{% url 'logout' %}">LOG OUT</a></li>
+                  <li><a class="amber-text text-accent-3" href="{% url 'logout' %}">LOG OUT</a></li>
                 {% else %}
-                  <li><a class="blue-text text-darken-4" href="{% url 'signup' %}">SIGN UP</a></li>
-                  <li><a class="blue-text text-darken-4" href="{% url 'login' %}">LOG IN</a></li>
+                  <li><a class="amber-text text-accent-3" href="{% url 'signup' %}">SIGN UP</a></li>
+                  <li><a class="amber-text text-accent-3" href="{% url 'login' %}">LOG IN</a></li>
                 {% endif %}
-                <li><a class="dropdown-trigger blue-text text-darken-4" href="#!" data-target="dropdown1">DROP-DOWN MENU<i class="material-icons right">expand_more</i></a></li>
+                <li><a class="dropdown-trigger amber-text text-accent-3" style="width: 300px !important" href="#!" data-target="dropdown1">MENU<i class="material-icons right">expand_more</i></a></li>
           </ul>
         </div>
       </nav>

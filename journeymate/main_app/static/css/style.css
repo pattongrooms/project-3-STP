@@ -15,6 +15,11 @@ main {
 
 .nav-wrapper {
   background-color: #2e4052;
+  color: seashell;
+}
+
+.dropdown-content-link{
+color: seashell;
 }
 
 .datepicker-modal {
@@ -103,7 +108,7 @@ td {
 }
 
 blockquote {
-  font-size: 5em;
+  font-size: 1vmin;
   font-style: italic;
 }
 
