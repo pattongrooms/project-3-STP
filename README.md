@@ -36,9 +36,7 @@
 
 ## **_Technologies Used_**
 
-![GitHub top language](https://img.shields.io/github/languages/top/pattongrooms/project-3-STP)
-
-![GitHub language count](https://img.shields.io/github/languages/count/pattongrooms/project-3-STP)
+![GitHub top language](https://img.shields.io/github/languages/top/pattongrooms/project-3-STP) ![GitHub language count](https://img.shields.io/github/languages/count/pattongrooms/project-3-STP)
 
 <img src="images/technologies1.png" name="image-name">
 
