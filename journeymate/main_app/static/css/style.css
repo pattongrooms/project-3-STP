@@ -70,10 +70,9 @@ color: seashell;
   display: grid;
   grid-template-columns: repeat(3, 35vmin);
   grid-template-rows: repeat(1, 22vmin);
-  gap: 3vmin;
+  gap: 10vmin;
   margin: 5vmin 0 2vmin 0;
   padding-bottom: 4vmin;
-  
 }
 
 section div #home-card{
@@ -87,6 +86,14 @@ section div #home-card{
   padding: 1vmin;
   color: #2e4052;
   text-align: center;
+  font-weight: 600;
+  padding-bottom: 4vmin;
+  margin-bottom: 30vmin;
+}
+
+#destination-index{
+  padding-bottom: 5vmin;
+  height: 30vmin;
 }
 
 .card-action {
@@ -119,7 +126,17 @@ form {
   border-radius: 5vmin;
 }
 
+.journey-detail-top, .card-title {
+  background-color: seashell;
+  font-size: large;
+  font-weight: 600;
+}
+
+.card-title {
+  font-weight: 700;
+  margin: 0;
+}
+
 textarea {
   height: 10vmin;
 }
-
