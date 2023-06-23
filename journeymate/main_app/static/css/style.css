@@ -83,7 +83,7 @@ section div #home-card{
 
 .card {
   border-radius: 5vmin;
-  padding: 1vmin;
+  padding: 2.5vmin;
   color: #2e4052;
   text-align: center;
   font-weight: 600;
@@ -145,4 +145,13 @@ textarea {
 
 #dropdown1 {
   background-color: seashell;
+}
+
+h1, h4 {
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+}
+
+img.circle {
+  border-radius: 50vmin;
 }
