@@ -190,3 +190,8 @@ img.circle {
 #journey-msg, #update-msg {
   background-color: #2e4052;
 }
+
+#media-upload  {
+  border-radius: 5vmin;
+  background-color: red;
+}
