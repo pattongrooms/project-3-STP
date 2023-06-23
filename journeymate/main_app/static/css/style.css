@@ -92,6 +92,10 @@ section div #home-card{
   background-color: seashell;
 }
 
+.blog-container {
+  margin: 3vmin;
+}
+
 #destination-index{
   padding-bottom: 5vmin;
   height: 30vmin;
@@ -135,7 +139,8 @@ form {
 }
 
 .card-title {
-  font-weight: 700;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
   margin: 0;
 }
 
@@ -155,3 +160,22 @@ h1, h4 {
 img.circle {
   border-radius: 50vmin;
 }
+
+.card-reveal {
+  background-color: seashell;
+  line-height: 2.85vmin;
+}
+
+#collapse-bg {
+  background-color: #2e4052;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+}
+
+#about-font {
+  font-size: 2vmin;
+}
+
+/* #collapse-icon {
+  border-radius: 2vmin;
+} */
