@@ -65,7 +65,7 @@ class Media(models.Model):
 
 
 class Blog(models.Model):
-    destination_name = models.CharField(max_length=100)
+    destination_name = models.CharField("Journey", max_length=100)
     trip_post = models.TextField(max_length=500)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
