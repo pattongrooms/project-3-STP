@@ -136,6 +136,7 @@ form {
   background-color: seashell;
   font-size: large;
   font-weight: 600;
+  margin: 0;
 }
 
 .card-title {
@@ -179,3 +180,13 @@ img.circle {
 /* #collapse-icon {
   border-radius: 2vmin;
 } */
+
+#dropdown-content-link {
+  color: #2e4052;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: .25vmin;
+}
+
+#journey-msg, #update-msg {
+  background-color: #2e4052;
+}
