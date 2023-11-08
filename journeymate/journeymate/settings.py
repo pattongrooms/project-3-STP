@@ -11,11 +11,14 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 
 import environ
 
-environ.Env()
+env = environ.Env(DEBUG=(bool, False),)
 environ.Env.read_env()
+
+SECRET_KEY = env.str('SECRET_KEY', default=get_random_secret_key())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,14 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c(4vrj(*@%_!)o-0qt+lj&9qx__=fq1o+%jypp2k%(%liu=vc2'
-
+# SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'journeymate.fly.dev']
 
-
+CSRF_TRUSTED_ORIGINS = ['https://journeymate.fly.dev'] 
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,11 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,6 +58,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # <-- Updated!
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'journeymate.urls'
 
@@ -79,14 +87,28 @@ WSGI_APPLICATION = 'journeymate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': env.db()
+#     {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'journeymate',
+#         'HOST': 'localhost',  <-- (optional) some computers might need this line
+#         'USER': 'admin', <-- (optional) postgres user name, if you have to sign into an account to open psql, you will want to add that user name here.
+#         'PASSWORD': 'password123', <-- (optional) postgres user password, if you have to sign into an account to open psql, you will want to add that user password here.
+#         'PORT': 3000 <-- if you desire to use a port other than 8000, you can change that here to any valid port id, some number between 1 and 65535 that isn't in use by some other process on your machine. The reason for this port number range is because of how TCP/IP works, a TCP/IP protocol network(the most widely used protocol used on the web) allocated 16 bits for port numbers. This means that number must be greater than 0 and less than 2^15 -1.
+#     }
+# }
+
+
 DATABASES = {
-    'default': {
+    'default': 
+    {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'journeymate',
-        # 'HOST': 'localhost',  <-- (optional) some computers might need this line
-        # 'USER': 'admin', <-- (optional) postgres user name, if you have to sign into an account to open psql, you will want to add that user name here.
-        # 'PASSWORD': 'password123', <-- (optional) postgres user password, if you have to sign into an account to open psql, you will want to add that user password here.
-        # 'PORT': 3000 <-- if you desire to use a port other than 8000, you can change that here to any valid port id, some number between 1 and 65535 that isn't in use by some other process on your machine. The reason for this port number range is because of how TCP/IP works, a TCP/IP protocol network(the most widely used protocol used on the web) allocated 16 bits for port numbers. This means that number must be greater than 0 and less than 2^15 -1.
+        # 'HOST': 'localhost',  
+        # 'USER': 'admin', 
+        # 'PASSWORD': 'password123', 
+        # 'PORT': '5432', 
     }
 }
 
