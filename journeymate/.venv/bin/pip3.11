@@ -1,4 +1,4 @@
-#!/Users/samuelesserman/Desktop/sei/unit3/project-3-STP/journeymate/.venv/bin/python3.11
+#!/Users/patton_grooms/SEIR-4-24/projects/project-3-STP/journeymate/.venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
